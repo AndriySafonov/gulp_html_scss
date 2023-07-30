@@ -9,7 +9,15 @@
     </head>
     <body>
         <h1>Index.html</h1>
-        @@include('blocks/nav.html')
+        @@include('../blocks/nav.html')
+        <input
+            type="text"
+            id="date"
+            autocomplete="off"
+            placeholder="Select day"
+        />
+
+        @@include('../blocks/header.html') @@include('../blocks/footer.html')
 
         <script src="./js/index.bundle.js"></script>
     </body>
