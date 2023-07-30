@@ -1,0 +1,25 @@
+.header {
+  background-color: rgb(93, 117, 122);
+  padding: 100px 0;
+  font-style: 38px;
+  color: #fff;
+  text-align: center;
+}
+@media (max-width: 1200px) {
+  .header {
+    font-size: 32px;
+  }
+}
+
+.footer {
+  background-color: rgb(55, 82, 235);
+  padding: 100px 0;
+  font-style: 38px;
+  color: #fff;
+  text-align: center;
+}
+@media (max-width: 1200px) {
+  .footer {
+    font-size: 26px;
+  }
+}/*# sourceMappingURL=main.css.map */

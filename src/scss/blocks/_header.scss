@@ -1,6 +1,11 @@
-.headr {
-    background-color: gray;
+.header {
+    background-color: rgb(93, 117, 122);
     padding: 100px 0;
     font-style: 38px;
+    color: #fff;
     text-align: center;
+
+    @media (max-width: 1200px) {
+        font-size: 32px;
+    }
 }
