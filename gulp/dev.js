@@ -8,7 +8,7 @@ const clean = require('gulp-clean');
 const sourceMaps = require('gulp-sourcemaps');
 const plumber = require('gulp-plumber');
 const notify = require('gulp-notify');
-// const goroupMedia = require('gulp-group-css-media-queries');
+
 const webpack = require('webpack-stream');
 const babel = require('gulp-babel');
 const imagemin = require('gulp-imagemin');
@@ -46,26 +46,25 @@ gulp.task('html:dev', function () {
 });
 
 gulp.task('sass:dev', function () {
-    return (
-        gulp
-            .src('./src/scss/*.scss')
-            .pipe(changed('./build/css/'))
-            .pipe(plumber(plumberNotify('SCSS')))
-            .pipe(sourceMaps.init())
-            .pipe(sassGlob())
-            .pipe(sass())
-            // .pipe(goroupMedia())
-            .pipe(sourceMaps.write())
-            .pipe(gulp.dest('./build/css/'))
-    );
+    return gulp
+        .src('./src/scss/*.scss')
+        .pipe(changed('./build/css/'))
+        .pipe(plumber(plumberNotify('SCSS')))
+        .pipe(sourceMaps.init())
+        .pipe(sassGlob())
+        .pipe(sass())
+        .pipe(sourceMaps.write())
+        .pipe(gulp.dest('./build/css/'));
 });
 
 gulp.task('images:dev', function () {
-    return gulp
-        .src('./src/img/**/*')
-        .pipe(changed('./build/img/'))
-        .pipe(imagemin({ verbose: true }))
-        .pipe(gulp.dest('./build/img/'));
+    return (
+        gulp
+            .src('./src/img/**/*')
+            .pipe(changed('./build/img/'))
+            // .pipe(imagemin({ verbose: true }))
+            .pipe(gulp.dest('./build/img/'))
+    );
 });
 
 gulp.task('fonts:dev', function () {
@@ -83,13 +82,15 @@ gulp.task('files:dev', function () {
 });
 
 gulp.task('js:dev', function () {
-    return gulp
-        .src('./src/js/*.js')
-        .pipe(changed('./build/js'))
-        .pipe(plumber(plumberNotify('JS')))
-        .pipe(babel())
-        .pipe(webpack(require('./../webpack.config')))
-        .pipe(gulp.dest('./build/js'));
+    return (
+        gulp
+            .src('./src/js/*.js')
+            .pipe(changed('./build/js'))
+            .pipe(plumber(plumberNotify('JS')))
+            // .pipe(babel())
+            .pipe(webpack(require('./../webpack.config')))
+            .pipe(gulp.dest('./build/js'))
+    );
 });
 
 const serverOptions = {

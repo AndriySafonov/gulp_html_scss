@@ -5,11 +5,6 @@
   color: #fff;
   text-align: center;
 }
-@media (max-width: 1200px) {
-  .footer {
-    font-size: 26px;
-  }
-}
 
 .header {
   background-color: rgb(93, 117, 122);
@@ -18,7 +13,12 @@
   color: #fff;
   text-align: center;
 }
+
 @media (max-width: 1200px) {
+  .footer {
+    font-size: 26px;
+  }
+
   .header {
     font-size: 32px;
   }
